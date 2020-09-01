@@ -77,4 +77,4 @@ We encourage your contributions to improve [project name]! Keep in mind when you
 If you have any questions, or to execute our corporate CLA, required if your contribution is on behalf of a company,  please drop us an email at opensource@newrelic.com.
 
 ## License
-[Project Name] is licensed under the [Apache 2.0](http://apache.org/licenses/LICENSE-2.0.txt) License.
+newrelic-xamarin-binding is licensed under the [Apache 2.0](http://apache.org/licenses/LICENSE-2.0.txt) License.
