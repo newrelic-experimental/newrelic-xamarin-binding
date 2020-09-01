@@ -1,0 +1,9 @@
+*.userprefs
+*.pidb
+*.jar
+*.dll
+*.zip
+obj
+bin
+test-results
+.DS_Store
