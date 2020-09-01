@@ -1,33 +1,78 @@
 [![Experimental Project header](https://github.com/newrelic/opensource-website/raw/master/src/images/categories/Experimental.png)](https://opensource.newrelic.com/oss-category/#experimental)
 
-# Newrelic's Xamarin Bindings
+# Newrelic's Xamarin Binding
 
->[Brief description - what is the project and value does it provide? How often should users expect to get releases? How is versioning set up? Where does this project want to go?]
+Xamarin binding for New Relic mobile agents - iOS https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-ios and Android SDK's https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android
 
 ## Installation
 
-> [Include a step-by-step procedure on how to get your code installed. Be sure to include any third-party dependencies that need to be installed separately]
+The Xamarin binding depends on the mobile SDK's. There is a Makefile under ios and android directories that downloads the SDK's and builds the binding for iOS and Android.
 
-## Getting Started
->[Simple steps to start working with the software similar to a "Hello World"]
+## Building and Getting Started for iOS and Android
 
-## Usage
->[**Optional** - Include more thorough instructions on how to use the software. This section might not be needed if the Getting Started section is enough. Remove this section if it's not needed.]
+### iOS:
+There is a Makefile for iOS that you can use (make) to build the NewRelicXamarin.iOS.dll that can be included in your Xamarin project. `make` will:
+   a. Download a specific version of iOS SDK for New Relic Mobile
+   b. Unzip the agent zip file and use it to build NewRelicXamarin.iOS.dll
 
+After the build is succesfull you need to add the `NewRelicXamarin.iOS.dll` file as a reference to your project. Make sure you add it in the iOS section.
 
-## Building
+**Alternatively**, you could use this project inside the Xamarian project and reference it.
 
->[**Optional** - Include this section if users will need to follow specific instructions to build the software from source. Be sure to include any third party build dependencies that need to be installed separately. Remove this section if it's not needed.]
+2. The Makefile uses Microsoft's build tool, msbuild (as xbuild is getting deprecated and replaced by msbuild). You can replace it with xbuild (Xamarin's build tool) if you are on older version of Xamarin.
 
-## Testing
+If you are still using xbuild, replace
+MONOXBUILD=/Library/Frameworks/Mono.framework/Commands/msbuild
+with
+MONOXBUILD=/Library/Frameworks/Mono.framework/Commands/xbuild
 
->[**Optional** - Include instructions on how to run tests if we include tests with the codebase. Remove this section if it's not needed.]
+3. Add the Newrelic license key and start up command in your Xamarin code after you reference this library.
 
-## Support
+Open `AppDelegate.cs` and add the following to the top of the file:
 
-New Relic hosts and moderates an online forum where customers can interact with New Relic employees as well as other customers to get help and share best practices. Like all official New Relic open source projects, there's a related Community topic in the New Relic Explorers Hub. You can find this project's topic/threads here:
+```
+using NewRelicXamarin;
+```
 
->Add the url for the support thread here
+Next, inside the class AppDelegate you need to add the following to the `FinishedLaunching` function:
+
+```
+NRLogger.SetLogLevels((uint)NRLogLevels.All);
+NewRelicXamarin.NewRelic.StartWithApplicationToken("new_relic_license_key");
+```
+
+Make sure you replace the `new_relic_license_key` with your own. You can find your own license key by creating a Mobile app within the New Relic UI. Go to `Mobile` > `Add a new app` > Choose your platform > Give your App a name > Your license key is now visible lower down the page.
+
+4. Launch the application and check the New Relic UI for instrumentation data. It can take a couple of minutes before it's visible.
+
+### Android:
+
+1. There is a Makefile for Android that you can use (make) to build the NewRelicXamarin.Android.dll that can be included in your Xamarin project. `make` will:
+
+        a. Download a specific version of Android SDK for New Relic Mobile
+
+        b. Unzip the agent zip file and use it to build NewRelicXamarin.Android.dll
+
+After the build is succesfull you need to add the `NewRelicXamarin.Android.dll` file as a reference to your project. Make sure you add it in the Android section.
+
+2. Add the Newrelic license key and start up command in your Xamarin code after you reference this library.
+
+In the MainActivity class or equivalent
+
+```
+var config = new NewRelicXamarin.Android.AgentConfiguration();
+//config.ReportCrashes = true;
+//config.ReportHandledExceptions = true;
+//config.ReportHandledExceptions = true;
+//var log = new NewRelicXamarin.Android.Logging.DefaultAgentLog();
+config.ApplicationToken = "new_relic_license_key";
+NewRelicXamarin.Android.AndroidAgentImpl.Init(this, config);
+NewRelicXamarin.Android.Agent.Start();
+```
+
+Make sure you replace the `new_relic_license_key` with your own. You can find your own license key by creating a Mobile app within the New Relic UI. Go to `Mobile` > `Add a new app` > Choose your platform > Give your App a name > Your license key is now visible lower down the page.
+
+3. Launch the application and check the New Relic UI for instrumentation data. It can take a couple of minutes before it's visible.
 
 ## Contributing
 We encourage your contributions to improve [project name]! Keep in mind when you submit your pull request, you'll need to sign the CLA via the click-through using CLA-Assistant. You only have to sign the CLA one time per project.
@@ -36,3 +81,4 @@ If you have any questions, or to execute our corporate CLA, required if your con
 ## License
 [Project Name] is licensed under the [Apache 2.0](http://apache.org/licenses/LICENSE-2.0.txt) License.
 >[If applicable: The [project name] also uses source code from third-party libraries. You can find full details on which libraries are used and the terms under which they are licensed in the third-party notices document.]
+
