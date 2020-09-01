@@ -1,0 +1,57 @@
+﻿<metadata>
+	<attr path="/api/package[@name='com.newrelic.com.google.gson']" name="managedName">NewRelicXamarin.Imported.GoogleGson</attr>
+	<attr path="/api/package[@name='com.newrelic.com.google.gson.stream']" name="managedName">NewRelicXamarin.Imported.GoogleGson.Stream</attr>
+	<attr path="/api/package[@name='com.newrelic.com.google.gson.annotations']" name="managedName">NewRelicXamarin.Imported.GoogleGson.Annotations</attr>
+	<attr path="/api/package[@name='com.newrelic.com.google.gson.reflect']" name="managedName">NewRelicXamarin.Imported.GoogleGson.Reflect</attr>
+	<remove-node path="/api/package[@name='com.newrelic.com.google.gson.internal']" />
+	<remove-node path="/api/package[@name='com.newrelic.com.google.gson.internal.bind']" />
+	<remove-node path="/api/package[@name='com.newrelic.agent.android.sample']" />
+
+
+	<attr path="/api/package[@name='com.newrelic.agent.android']" name="managedName">NewRelicXamarin.Android</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.activity']" name="managedName">NewRelicXamarin.Android.Activity</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.activity.config']" name="managedName">NewRelicXamarin.Android.Activity.Config</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.api']" name="managedName">NewRelicXamarin.Android.Api</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.api.common']" name="managedName">NewRelicXamarin.Android.Api.Common</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.api.v1']" name="managedName">NewRelicXamarin.Android.Api.V1</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.api.v2']" name="managedName">NewRelicXamarin.Android.Api.V2</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.background']" name="managedName">NewRelicXamarin.Android.Background</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.harvest']" name="managedName">NewRelicXamarin.Android.Harvests</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.harvest.type']" name="managedName">NewRelicXamarin.Android.Harvests.Types</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.instrumentation']" name="managedName">NewRelicXamarin.Android.Instrumentations</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.instrumentation.httpclient']" name="managedName">NewRelicXamarin.Android.Instrumentations.HttpClient</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.instrumentation.io']" name="managedName">NewRelicXamarin.Android.Instrumentations.IO</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.logging']" name="managedName">NewRelicXamarin.Android.Logging</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.measurement']" name="managedName">NewRelicXamarin.Android.Measurements</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.measurement.consumer']" name="managedName">NewRelicXamarin.Android.Measurements.Consumers</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.measurement.http']" name="managedName">NewRelicXamarin.Android.Measurements.Http</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.measurement.producer']" name="managedName">NewRelicXamarin.Android.Measurements.Producers</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.metric']" name="managedName">NewRelicXamarin.Android.Metrics</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.stats']" name="managedName">NewRelicXamarin.Android.Stats</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.tracing']" name="managedName">NewRelicXamarin.Android.Tracing</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.util']" name="managedName">NewRelicXamarin.Android.Utils</attr>
+
+
+	<attr path="/api/package[@name='com.newrelic.agent.android']/class[@name='NewRelicXamarin']" name="name">NewRelicXamarin</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android']/class[@name='Measurements']" name="name">MeasurementsHelper</attr>
+	<attr path="/api/package[@name='com.newrelic.agent.android.harvest']/class[@name='Harvester.State']" name="visibility">public</attr>
+    <attr path="/api/package[@name='com.newrelic.com.google.gson']/class[@name='JsonStreamParser']/method[@name='next']" name="return">Java.Lang.Object</attr>
+
+
+    <!-- Remap visibility -->
+    <attr path="/api/package[@name='com.newrelic.agent.android.payload']/class[@name='PayloadReporter']/method[@name='start' and count(parameter)=0]" name="visibility">public</attr>
+    <attr path="/api/package[@name='com.newrelic.agent.android.payload']/class[@name='PayloadReporter']/method[@name='stop' and count(parameter)=0]" name="visibility">public</attr>
+    <attr path="/api/package[@name='com.newrelic.agent.android.crash']/class[@name='CrashReporter']/method[@name='stop' and count(parameter)=0]" name="visibility">public</attr>
+
+    <!-- Remove elements where child classes do not fully implement required methods -->
+    <remove-node path="/api/package[@name='com.newrelic.agent.android.payload']/interface[@name='PayloadStore']/method[@name='fetchAll' and count(parameter)=0]" />
+    <remove-node path="/api/package[@name='com.newrelic.agent.android.analytics']/interface[@name='AnalyticAttributeStore']/method[@name='fetchAll' and count(parameter)=0]" />
+    <remove-node path="/api/package[@name='com.newrelic.agent.android.payload']/interface[@name='PayloadStore']/method[@name='delete' and count(parameter)=1 and parameter[1][@type='T']]" />s
+    <remove-node path="/api/package[@name='com.newrelic.agent.android.payload']/interface[@name='PayloadStore']/method[@name='store' and count(parameter)=1 and parameter[1][@type='T']]" />
+    <remove-node path="/api/package[@name='com.newrelic.agent.android.crash']/interface[@name='CrashStore']/method[@name='fetchAll' and count(parameter)=0]" />
+
+
+    <!-- this one should be reviewed.  this gets rid of the eror, not sure if/how it will affect any downstream code -->
+    <attr path="/api/package[@name='com.newrelic.agent.android.payload']/class[@name='PayloadSender']/method[@name='call' and count(parameter)=0]" name="managedReturn">Java.Lang.Object</attr>
+
+</metadata>
