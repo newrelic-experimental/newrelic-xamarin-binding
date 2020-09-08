@@ -73,8 +73,7 @@ Make sure you replace the `new_relic_license_key` with your own. You can find yo
 3. Launch the application and check the New Relic UI for instrumentation data. It can take a couple of minutes before it's visible.
 
 ## Contributing
-We encourage your contributions to improve [project name]! Keep in mind when you submit your pull request, you'll need to sign the CLA via the click-through using CLA-Assistant. You only have to sign the CLA one time per project.
-If you have any questions, or to execute our corporate CLA, required if your contribution is on behalf of a company,  please drop us an email at opensource@newrelic.com.
+We encourage your contributions to improve the New Relic Xamarin Binding! Keep in mind when you submit your pull request, you'll need to sign the CLA via the click-through using CLA-Assistant. You only have to sign the CLA one time per project. If you have any questions, or to execute our corporate CLA, required if your contribution is on behalf of a company, please drop us an email at opensource@newrelic.com.
 
 ## License
 newrelic-xamarin-binding is licensed under the [Apache 2.0](http://apache.org/licenses/LICENSE-2.0.txt) License.
