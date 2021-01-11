@@ -185,7 +185,7 @@ namespace NewRelicXamarin
 
         // +(BOOL)setUserId:(NSString *)userId;
         [Static, Export("userId:")]
-        bool IncrementAttribute(string userId);
+        bool setUserId(string userId);
 
         // +(BOOL)incrementAttribute:(NSString *)name;
         [Static, Export("incrementAttribute:")]
