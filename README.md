@@ -1,6 +1,6 @@
 [![Experimental Project header](https://github.com/newrelic/opensource-website/raw/master/src/images/categories/Experimental.png)](https://opensource.newrelic.com/oss-category/#experimental)
 
-# Newrelic's Xamarin Binding
+# New Relic Mobile Agent - Xamarin Bindings
 
 Xamarin binding for New Relic mobile agents - iOS https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-ios and Android SDK's https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android
 
