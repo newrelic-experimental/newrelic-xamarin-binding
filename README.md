@@ -61,11 +61,23 @@ In the MainActivity class or equivalent
 var config = new NewRelicXamarin.Android.AgentConfiguration();
 //config.ReportCrashes = true;
 //config.ReportHandledExceptions = true;
-//config.ReportHandledExceptions = true;
 //var log = new NewRelicXamarin.Android.Logging.DefaultAgentLog();
 config.ApplicationToken = "new_relic_license_key";
 NewRelicXamarin.Android.AndroidAgentImpl.Init(this, config);
 NewRelicXamarin.Android.Agent.Start();
+
+//Alternatively, you can also start the agent with higher log level (for debugging)
+using NewRelicXamarin.Android;
+
+var config = new NewRelicXamarin.Android.AgentConfiguration();
+config.ReportCrashes = true;
+config.ApplicationToken = "new_relic_license_key";
+
+var newRelic = NewRelic
+.WithApplicationToken("new_relic_license_key")
+.WithLoggingEnabled(true).WithLogLevel(6);
+AndroidAgentImpl.Init(this, config);
+
 ```
 
 Make sure you replace the `new_relic_license_key` with your own. You can find your own license key by creating a Mobile app within the New Relic UI. Go to `Mobile` > `Add a new app` > Choose your platform > Give your App a name > Your license key is now visible lower down the page.
