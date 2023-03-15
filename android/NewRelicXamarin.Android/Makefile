@@ -2,7 +2,7 @@ BTOUCH=/Developer/MonoTouch/usr/bin/btouch
 SMCS=/Developer/MonoTouch/usr/bin/smcs
 MONOXBUILD=/Library/Frameworks/Mono.framework/Commands/msbuild
 
-VERSION=5.26.0
+VERSION=6.9.2
 
 all: NewRelic.dll
 

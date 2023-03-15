@@ -54,4 +54,8 @@
     <!-- this one should be reviewed.  this gets rid of the eror, not sure if/how it will affect any downstream code -->
     <attr path="/api/package[@name='com.newrelic.agent.android.payload']/class[@name='PayloadSender']/method[@name='call' and count(parameter)=0]" name="managedReturn">Java.Lang.Object</attr>
 
+	<!-- Additions for NR Agent v6.9.2, fixes build errors -->
+	<remove-node path="/api/package[@name='com.newrelic.agent.android.stores']" />
+	<remove-node path="/api/package[@name='com.newrelic.agent.android.distributedtracing']/class[@name='DistributedTracing']" />
+
 </metadata>
