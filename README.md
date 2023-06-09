@@ -1,4 +1,12 @@
-[![Experimental Project header](https://github.com/newrelic/opensource-website/raw/master/src/images/categories/Experimental.png)](https://opensource.newrelic.com/oss-category/#experimental)
+<a href="https://opensource.newrelic.com/oss-category/#archived"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/newrelic/opensource-website/raw/main/src/images/categories/dark/Archived.png"><source media="(prefers-color-scheme: light)" srcset="https://github.com/newrelic/opensource-website/raw/main/src/images/categories/Archived.png"><img alt="New Relic Open Source archived project banner." src="https://github.com/newrelic/opensource-website/raw/main/src/images/categories/Archived.png"></picture></a>
+
+# Archival Notice
+
+❗Notice: This project has been archived _as is_ and is no longer actively maintained.
+
+New Relic has released an official Xamarin Agent: [https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-xamarin/monitor-your-xamarin-application/](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-xamarin/monitor-your-xamarin-application/). 
+
+Please use this for monitoring your Xamarin applications.
 
 # New Relic Mobile Agent - Xamarin Bindings
 
